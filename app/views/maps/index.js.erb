@@ -1,0 +1,24 @@
+inputBox = document.getElementById('coordinates-to-show')
+refreshMapButton = document.getElementById('refresh-map')
+
+coordinatesString = "<%= @js_districts.to_json %>"
+inputBox.value = coordinatesString
+refreshMapButton.click()
+
+<% if @js_districts.count != 0 %>
+  document.getElementById('districts-card').innerHTML = "<%= j render 'card_top' %>"
+<% end %>
+
+// console.log("Script des cards marche")
+inputFlyBox = document.getElementById('fly-to')
+refreshFlyButton = document.getElementById('submit-to-fly')
+
+document.querySelectorAll(".card-product").forEach((card) => {
+  card.addEventListener('click', () => {
+    console.log(card)
+    coordinatesFlyString = card.dataset.districtLocation
+    inputFlyBox.value = coordinatesFlyString
+    refreshFlyButton.click()
+  })
+})
+

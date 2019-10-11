@@ -1,0 +1,21 @@
+
+  <%= inline_svg 'home_background.svg', class: 'background', id: 'background', height: '100%'%>
+
+  <div>
+
+    <div class="middle">
+      <div class="logo-position">
+        <div id="title-text">
+          <h1 class="text-logo">WIZAR</h1>
+        </div>
+        <div class="d-flex flex-column">
+        <h3 class="text-left subtitle-logo">Every neighbourhood has a personality. <br> Find the one that matches yours. </h3>
+        <h3 class="text-left subtitle-logo"></h3>
+        </div>
+
+      </div>
+    <div class="btn-search">
+    <%= link_to "Start search", districts_path, class: "btn btn-success btn-lg new-location-btn m-3" %>
+    </div>
+  </div>
+</div>

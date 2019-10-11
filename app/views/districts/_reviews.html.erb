@@ -1,0 +1,49 @@
+<!-- ================================================================================  Review section
+-->
+
+<div id="testimonial-carousel" class="carousel-slide" data-ride="false">
+
+  <div class="text-center title-review">
+    <h2>Neighbourhood's reviews</h2>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active container-fluid">
+      <div class="review-cards">
+
+        <% @district.review.split("@@").each_with_index do |review, index| %>
+          <div class="review-card">
+            <div class="d-flex">
+              <div class="reviewers-photos">
+                <%= image_tag @reviews[index][:image], class:"image-review"  %>
+              </div>
+              <h4><%= @reviews[index][:name] %></h4>
+            </div>
+            <p class="testimonial-text"><%= review %></<p></p>
+          </div>
+        <% end %>
+
+
+      </div>
+
+    </div>
+
+    <div class="carousel-item container-fluid ">
+      <div class="review-cards">
+
+        <div class="review-card">
+          <div class="text-center">
+            <%= image_tag "stephane.jpeg", class:"image-review"  %>
+          </div>
+          <h2 class="testimonial-text">With some of the best cafes, restaurants, bars and local independent shops, it is a must for anyone living or visiting Montreal.</h2>
+        </div>
+
+        <div class="review-card">
+          <div class="text-center">
+            <%= image_tag "steph.jpg", class:"image-review" %>
+          </div>
+          <h2 class="testimonial-text"> Fun place for strolling with a good selection of coffe shops and eateries, book stores and funky resale shops. The perpendicular streets are really quiet</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

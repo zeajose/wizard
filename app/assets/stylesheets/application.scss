@@ -1,0 +1,39 @@
+// Graphical variables
+@import "config/colors";
+@import "config/fonts";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+ body {
+  background-color: white;
+ }
+
+
+
+
+.popup-link {
+  color: black;
+  font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  span {
+    padding-right: 9px;
+    padding-left: 9px;
+    padding-top: 9px;
+  }
+}
+
+.mapboxgl-popup-content {
+  padding-bottom: 8px !important;
+}

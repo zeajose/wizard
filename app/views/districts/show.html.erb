@@ -1,0 +1,82 @@
+<div class="container map-display">
+  <div class="row">
+    <div class="col-lg-5 tab-side">
+<div class="d-flex justify-content-center title-show">
+  <h1><strong><%= link_to  @district.name , districts_path, class: "title-show" %></strong></h1>
+
+</div>
+<!-- ========================================================== Tab section-->
+<!-- <div>
+  <%= link_to districts_path do   %>
+  <%= inline_svg 'logo-w.svg', class: 'background', id: 'background', width: '20%' %>
+<% end %>
+</div> -->
+<div class="container d-flex justify-content-around tabs">
+  <ul class="nav tabs-underlined" id="myTab" role="tablist">
+    <li>
+      <a class=" active tab-underlined" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">HOME</a>
+    </li>
+    <li>
+      <a class=" tab-underlined" id="photos-tab" data-toggle="tab" href="#photos" role="tab" aria-controls="photos" aria-selected="false">PHOTOS</a>
+    </li>
+    <li>
+      <a class=" tab-underlined" id="review-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">REVIEWS</a>
+    </li>
+    <li>
+      <a class=" tab-underlined" id="suggestions.html.erb-tab" data-toggle="tab" href="#suggestions" role="tab" aria-controls="suggestions" aria-selected="false">SUGGESTIONS</a>
+    </li>
+  </ul>
+</div>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <%= render 'home-partial'  %>
+  </div>
+  <div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="photos-tab">
+    <%= render 'photos'  %>
+  </div>
+  <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="review-tab">
+    <%= render 'reviews'  %>
+  </div>
+  <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="suggestions-tab">
+    <%= render 'suggestions'  %>
+  </div>
+</div>
+
+
+</div>
+  <div class="col-lg-7 map-side">
+    <div class="mapandicons" >
+<!-- //==================================================================================  Icons-->
+        <div class="d-flex flex-column justify-content-between mr-4 icons-side">
+          <button type="button" data-value="restaurants" id="restaurant-btn" class="btn-show-category"><i class="fas fa-utensils"></i></button>
+          <button type="button" data-value="bars" class="btn-show-category"><i class="fas fa-beer"></i></button>
+          <button type="button" data-value="schools" id="school-btn" class="btn-show-category"><i class="fas fa-graduation-cap"></i></button>
+          <button type="button" data-value="subways" id="subway-btn" class="btn-show-category"><i class="fas fa-subway"></i></button>
+          <button type="button" data-value="bixis" id="bixi-btn" class="btn-show-category"><i class="fas fa-bicycle"></i></button>
+          <button type="button" data-value="gyms" id="gym-btn" class="btn-show-category"><i class="fas fa-dumbbell"></i></button>
+          <button type="button" data-value="coffees" id="coffee-btn" class="btn-show-category"><i class="fas fa-coffee"></i></button>
+        </div>
+<!-- ============================================================================ Map display -->
+      <div
+      class="map mr-4"
+      id="show-map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-center="<%= @district.location.to_json %>"
+      data-coordinates="<%= @district.coordinates.to_json %>"
+      data-restaurants="<%= @restaurant_coordinates.to_json %>"
+      data-schools="<%= @school_coordinates.to_json %>"
+      data-bars="<%= @bar_coordinates.to_json %>"
+      data-subways="<%= @subway_coordinates.to_json %>"
+      data-coffees="<%= @cafe_coordinates.to_json %>"
+      data-gyms="<%= @gym_coordinates.to_json %>"
+      data-bixis="<%= @bixi_coordinates.to_json %>"
+      >
+      </div>
+    </div>
+
+
+    </div>
+
+
+<!-- ============================================================================== END-->
